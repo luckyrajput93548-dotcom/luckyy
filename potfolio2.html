@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vansh Chauhan | Portfolio</title>
+
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+        #38bdf8,
+        #8b5cf6
+    );
+    border-radius:20px;
+}
+
+
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:rgba(15,23,42,.8);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
+
+    text-shadow:
+    0 0 10px #38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+    background:
+    linear-gradient(
+    -45deg,
+    #0f172a,
+    #1e293b,
+    #312e81,
+    #0ea5e9
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.hero-content{
+    max-width:900px;
+
+    animation:
+    float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+
+    text-shadow:
+    0 0 10px #131a1d,
+    0 0 20px #2a2ac2,
+    0 0 40px #630404;
+}
+
+.hero h3{
+    font-size:1.5rem;
+    color:#c084fc;
+    margin-bottom:25px;
+}
+
+.hero p{
+    color:#e2e8f0;
+    line-height:1.8;
+    max-width:750px;
+    margin:auto;
+}
+
+
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    margin:10px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #38bdf8,
+    #8b5cf6
+    );
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 10px 30px rgba(56,189,248,.4);
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    border:2px solid #38bdf8;
+}
+
+
+
+.section{
+    padding:100px 10%;
+}
+
+.section h2{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+
+    position:relative;
+}
+
+.section h2::after{
+
+    content:'';
+
+    width:100px;
+
+    height:4px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #38bdf8,
+    #8b5cf6
+    );
+
+    position:absolute;
+
+    left:50%;
+    bottom:-15px;
+
+    transform:translateX(-50%);
+}
+
+
+
+#about p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    line-height:2;
+
+    color:#cbd5e1;
+
+    font-size:1.05rem;
+}
+
+
+
+.skills-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.skill-box{
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    transition:.4s;
+
+    box-shadow:
+    0 8px 32px rgba(31,38,135,.2);
+}
+
+.skill-box:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 15px 40px rgba(56,189,248,.3);
+}
+
+.skill-box h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+
+
+.education-box{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+}
+
+.education-box h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+
+
+.project-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    margin-bottom:30px;
+
+    transition:.5s;
+}
+
+.project-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+    );
+
+    transition:.8s;
+}
+
+.project-card:hover::before{
+    left:100%;
+}
+
+.project-card:hover{
+
+    transform:
+    translateY(-12px);
+
+    box-shadow:
+    0 15px 50px rgba(56,189,248,.25);
+}
+
+.project-card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:15px;
+}
+
+.featured{
+
+    border:
+    2px solid #38bdf8;
+
+    box-shadow:
+    0 0 25px rgba(56,189,248,.25);
+}
+
+.tech-stack{
+    margin-top:20px;
+}
+
+.tech-stack span{
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    margin:5px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #38bdf8,
+    #8b5cf6
+    );
+
+    font-size:14px;
+}
+
+.project-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #8b5cf6,
+    #38bdf8
+    );
+
+    transition:.3s;
+}
+
+.project-btn:hover{
+    transform:scale(1.05);
+}
+
+
+
+.contact-box{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:
+    blur(20px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 25px rgba(56,189,248,.15);
+}
+
+.contact-box p{
+
+    margin-bottom:20px;
+
+    font-size:18px;
+}
+
+.contact-box i{
+
+    color:#38bdf8;
+
+    margin-right:10px;
+}
+
+
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    background:#020617;
+
+    color:#94a3b8;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+
+
+.profile-img{
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #38bdf8;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 0 20px #38bdf8,
+    0 0 50px rgba(56,189,248,.5);
+}
+
+
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav ul li{
+        margin:10px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero h3{
+        font-size:1.1rem;
+    }
+
+    .section{
+        padding:80px 6%;
+    }
+
+    .section h2{
+        font-size:2.2rem;
+    }
+
+    .profile-img{
+        width:170px;
+        height:170px;
+    }
+}
+   </style>
+
+   
+</head>
+<body>
+
+   
+    <header>
+        <nav>
+            <div class="logo">Vansh Chauhan</div>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm <span>Vansh Chauhan</span></h1>
+
+            <h3>
+                Aspiring Software Developer |
+                Web Developer |
+                Python Developer
+            </h3>
+
+            <p>
+                Computer Science Engineering student passionate about
+                building modern web applications and software solutions.
+                Seeking internship opportunities in Web Development,
+                Software Development and Backend Development.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+
+                <a href="https://www.linkedin.com/in/vansh-chauhan-6788653ab"
+                   target="_blank"
+                   class="btn btn-outline">
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="about" class="section">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a B.Tech Computer Science Engineering student from
+            World College of Technology and Management, Farrukhnagar.
+            I enjoy developing websites, software applications and
+            solving real-world problems through technology.
+
+            I have experience working with Python, Java, C,
+            HTML, CSS, JavaScript, Git and GitHub.
+
+            I am actively looking for internship opportunities where
+            I can contribute, learn and grow as a software engineer.
+        </p>
+
+    </section>
+
+ 
+    <section id="skills" class="section">
+
+        <h2>Technical Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-box">
+                <h3>Programming</h3>
+                <p>Python, Java, C, JavaScript</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Frontend</h3>
+                <p>HTML5, CSS3, JavaScript</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Tools</h3>
+                <p> VS Code</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Core Concepts</h3>
+                <p>OOP, DSA, REST APIs, Problem Solving</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="education" class="section">
+
+        <h2>Education</h2>
+
+        <div class="education-box">
+
+            <h3>B.Tech - Computer Science Engineering</h3>
+
+            <p>
+                World College of Technology and Management,
+                Farrukhnagar
+            </p>
+
+            <p>Expected Graduation: 2026</p>
+
+        </div>
+
+    </section>
+
+    
+    <section id="projects" class="section">
+
+        <h2>Projects</h2>
+
+        
+
+        <div class="project-card featured">
+
+            <h3>🏥 Health Monitoring Agent</h3>
+
+            <p>
+                Developed a web-based Health Monitoring Agent that
+                helps monitor and manage health-related information
+                through an intuitive and responsive interface.
+                Deployed successfully on Netlify.
+            </p>
+
+            <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <a href="https://health-monitring-agent.netlify.app/"
+               target="_blank"
+               class="project-btn">
+                Live Demo
+            </a>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>Personal Portfolio Website</h3>
+
+            <p>
+                Designed and developed a fully responsive portfolio
+                website to showcase projects, skills and achievements.
+            </p>
+
+        </div>
+
+       
+
+        <div class="project-card">
+
+            <h3>To-Do List Web Application</h3>
+
+            <p>
+                Developed a responsive task management application
+                featuring task creation, editing and deletion.
+            </p>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="contact" class="section">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact-box">
+
+            <p>
+                <i class="fas fa-envelope"></i>
+                luckyrajput93548@gmail.com
+            </p>
+
+            <p>
+                <i class="fas fa-phone"></i>
+                +91 9813616519
+            </p>
+
+            <p>
+                <i class="fas fa-location-dot"></i>
+                Haryana, India
+            </p>
+
+        </div>
+
+    </section>
+
+    
+
+    <footer>
+        <p>© 2026 Vansh Chauhan | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
